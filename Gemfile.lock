@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/loftwah-demo/my_private_gem.git
+  revision: d16ca59aa8883a8fc8af5658b9fd05daa8998bf7
+  specs:
+    my_private_gem (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -275,6 +281,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  my_private_gem!
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.3, >= 7.1.3.4)
