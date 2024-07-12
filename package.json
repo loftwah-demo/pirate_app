@@ -14,6 +14,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "my-private-package": "git+https://github.com/loftwah-demo/my-private-npm-package.git"
+    "my-private-npm-package": "git+https://github.com/loftwah-demo/my-private-npm-package.git"
+  },
+  "devDependencies": {
+    "vite": "^5.3.3",
+    "vite-plugin-ruby": "^5.0.0"
   }
 }

@@ -49,6 +49,8 @@ gem "bootsnap", require: false
 
 gem 'my_private_gem', git: 'https://github.com/loftwah-demo/my_private_gem.git'
 
+gem 'vite_rails'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
