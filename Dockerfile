@@ -24,8 +24,9 @@ RUN apt-get update -qq && \
 COPY Gemfile Gemfile.lock ./
 
 # Use secret to access GitHub token
-RUN --mount=type=secret,id=github_token \
-    GITHUB_TOKEN=$(cat /run/secrets/github_token) && \
+RUN --mount=type=bind,target=. \
+    --mount=type=secret,id=GITHUB_TOKEN \
+    GITHUB_TOKEN=$(cat /run/secrets/GITHUB_TOKEN) && \
     git config --global url."https://${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/" && \
     bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
