@@ -2,18 +2,29 @@
 <html>
   <head>
     <title>PirateApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+  <body class="bg-blue-900 text-white">
+    <header class="bg-gray-800 p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">PirateApp</h1>
+        <nav>
+          <ul class="flex space-x-4">
+            <li><a href="/" class="hover:text-yellow-500">Home</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <%= yield %>
+    <footer class="bg-gray-800 p-4 mt-10">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 PirateApp. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
