@@ -1,0 +1,32 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+      secrets:
+        - GITHUB_TOKEN
+    environment:
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+      DATABASE_URL: postgres://postgres:postgres@db:5432/pirate_app_development
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/rails
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: pirate_app_development
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+secrets:
+  GITHUB_TOKEN:
+    environment: GITHUB_TOKEN
+
+volumes:
+  db_data:
