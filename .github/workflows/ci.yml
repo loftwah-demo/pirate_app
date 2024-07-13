@@ -40,7 +40,7 @@ jobs:
 
       - name: Set up database
         run: |
-          bundle exec rails db:create db:schema:load
+          bundle exec rails db:create db:migrate
         env:
           RAILS_ENV: test
           POSTGRES_USER: postgres
