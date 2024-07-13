@@ -28,6 +28,7 @@ jobs:
         echo "${{ secrets.GH_PAT }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
         GITHUB_TOKEN=${{ secrets.GH_PAT }} docker buildx build --secret id=GITHUB_TOKEN -t ghcr.io/loftwah-demo/pirate_app/pirateapp:latest --push .
 
+
     - name: Deploy to droplet
       uses: appleboy/ssh-action@master
       with:
