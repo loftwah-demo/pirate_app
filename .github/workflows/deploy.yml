@@ -35,6 +35,7 @@ jobs:
         username: root
         key: ${{ secrets.DROPLET_SSH_PRIVATE_KEY }}
         script: |
+          echo "${{ secrets.GH_PAT }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
           docker compose -f /root/docker-compose.prod.yml --env-file /root/.env down
           docker compose -f /root/docker-compose.prod.yml --env-file /root/.env pull
           docker compose -f /root/docker-compose.prod.yml --env-file /root/.env up -d
