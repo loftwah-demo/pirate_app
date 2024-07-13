@@ -28,7 +28,6 @@ jobs:
         echo "${{ secrets.GH_PAT }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
         GITHUB_TOKEN=${{ secrets.GH_PAT }} docker buildx build --secret id=GITHUB_TOKEN -t ghcr.io/loftwah-demo/pirate_app/pirateapp:latest --push .
 
-
     - name: Deploy to droplet
       uses: appleboy/ssh-action@master
       with:
@@ -36,6 +35,6 @@ jobs:
         username: root
         key: ${{ secrets.DROPLET_SSH_PRIVATE_KEY }}
         script: |
-          docker-compose -f /root/docker-compose.prod.yml --env-file /root/.env down
-          docker-compose -f /root/docker-compose.prod.yml --env-file /root/.env pull
-          docker-compose -f /root/docker-compose.prod.yml --env-file /root/.env up -d
+          docker compose -f /root/docker-compose.prod.yml --env-file /root/.env down
+          docker compose -f /root/docker-compose.prod.yml --env-file /root/.env pull
+          docker compose -f /root/docker-compose.prod.yml --env-file /root/.env up -d
