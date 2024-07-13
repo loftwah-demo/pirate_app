@@ -24,14 +24,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.3.0
 
       - name: Install dependencies
+        env:
+          BUNDLE_GITHUB__COM: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gem install bundler
+          bundle config set --local path 'vendor/bundle'
           bundle install
 
       - name: Set up database
