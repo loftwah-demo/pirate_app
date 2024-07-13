@@ -1,5 +1,5 @@
 services:
-  app:
+  web:
     build:
       context: .
       dockerfile: Dockerfile.dev
@@ -14,6 +14,19 @@ services:
       - .:/rails
     depends_on:
       - db
+    command: bin/rails server -b 0.0.0.0
+
+  vite:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+      secrets:
+        - GITHUB_TOKEN
+    volumes:
+      - .:/rails
+    depends_on:
+      - web
+    command: bin/vite dev
 
   db:
     image: postgres:16
