@@ -32,10 +32,10 @@ jobs:
 
       - name: Install dependencies
         env:
-          BUNDLE_GITHUB__COM: ${{ secrets.GITHUB_TOKEN }}
+          BUNDLE_GITHUB__COM: ${{ secrets.GH_PAT }}
         run: |
           gem install bundler
-          bundle config set --local github.com "x-access-token:${{ secrets.GITHUB_TOKEN }}"
+          bundle config set --local github.com "x-access-token:${{ secrets.GH_PAT }}"
           bundle install
 
       - name: Set up database
