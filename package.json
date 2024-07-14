@@ -14,7 +14,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "my-private-npm-package": "git+https://github.com/loftwah-demo/my-private-npm-package.git"
+    "autoprefixer": "^10.4.19",
+    "my-private-npm-package": "git+https://github.com/loftwah-demo/my-private-npm-package.git",
+    "tailwindcss": "^3.4.4"
   },
   "devDependencies": {
     "vite": "^5.3.3",

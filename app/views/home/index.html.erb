@@ -1,10 +1,55 @@
-<div class="min-h-screen bg-blue-900 flex items-center justify-center">
-  <div class="max-w-2xl bg-gray-800 text-white p-10 rounded-lg shadow-lg">
-    <h1 class="text-5xl font-bold mb-4 text-center">Ahoy, Matey!</h1>
-    <p class="text-xl mb-6 text-center">Welcome to Pirate App, the ultimate pirate-themed adventure on the high seas!</p>
-    
-    <div class="text-center">
-      <a href="#get-started" class="bg-yellow-500 text-black font-bold py-2 px-4 rounded hover:bg-yellow-600">Get Started</a>
+<div class="bg-blue-900 text-white font-sans min-h-screen flex flex-col">
+  <header class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold">PirateApp</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="/" class="hover:text-yellow-500">Home</a></li>
+          <li><a href="#about" class="hover:text-yellow-500">About</a></li>
+          <li><a href="#features" class="hover:text-yellow-500">Features</a></li>
+          <li><a href="#contact" class="hover:text-yellow-500">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
+  </header>
+
+  <main class="flex-1 flex flex-col items-center justify-center p-8">
+    <section class="text-center">
+      <h2 class="text-4xl font-bold mb-4">Linux for Pirates! 2 - Ruby on Whales</h2>
+      <p class="text-lg mb-8">Embark on a Ruby adventure with Linux for Pirates! 2 - Ruby on Whales. Learn Ruby and conquer the seas!</p>
+      <div class="flex justify-center space-x-8 mb-8">
+        <%= image_tag vite_asset_path('images/book-cover.jpg'), alt: "Book Cover", class: "w-1/4 h-auto rounded shadow-lg" %>
+        <%= image_tag vite_asset_path('images/pirate-adventure.png'), alt: "Pirate Adventure", class: "w-1/4 h-auto rounded shadow-lg" %>
+      </div>
+      <a href="#" class="bg-yellow-500 text-black py-2 px-4 rounded hover:bg-yellow-600">Get Started</a>
+    </section>
+
+    <section id="about" class="text-center mt-12">
+      <h3 class="text-3xl font-bold mb-4">About the Book</h3>
+      <p class="text-lg mb-8">"Linux for Pirates! 2 - Ruby on Whales" is an engaging guide for learning Ruby on Rails. Tailored for open-source enthusiasts and pirate-themed adventure lovers, it combines technical learning with an immersive storyline.</p>
+    </section>
+
+    <section id="features" class="text-center mt-12">
+      <h3 class="text-3xl font-bold mb-4">Features and Benefits</h3>
+      <ul class="text-lg list-none space-y-2">
+        <li>⚓ Comprehensive Ruby on Rails tutorials</li>
+        <li>⚓ Fun and engaging pirate-themed storyline</li>
+        <li>⚓ Suitable for beginners and experienced developers</li>
+        <li>⚓ Tips and tricks from seasoned developers</li>
+        <li>⚓ Community-driven learning experience</li>
+      </ul>
+    </section>
+
+    <section id="testimonials" class="text-center mt-12">
+      <h3 class="text-3xl font-bold mb-4">Testimonials</h3>
+      <p class="text-lg mb-4">"An incredible journey into the world of Ruby on Rails! The pirate theme makes learning so much fun!" - Jane Doe</p>
+      <p class="text-lg mb-8">"A must-read for any developer looking to master Ruby on Rails. Highly recommended!" - John Smith</p>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 p-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 PirateApp. All rights reserved.</p>
+    </div>
+  </footer>
 </div>

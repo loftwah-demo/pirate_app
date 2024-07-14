@@ -1,3 +1,5 @@
+// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
+import '../stylesheets/application.css'
 // To see this message, add the following to the `<head>` section in your
 // views/layouts/application.html.erb
 //
